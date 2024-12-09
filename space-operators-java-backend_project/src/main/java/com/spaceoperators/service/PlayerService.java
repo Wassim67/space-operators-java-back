@@ -18,7 +18,7 @@ public class PlayerService {
     }
 
     public PlayerDTO getPlayerById(UUID idPlayer) {
-        Optional<Player> player = playerRepository.findById(idPlayer);
+        Optional<Player> player = playerRepository.findById(String.valueOf(idPlayer));
         return player.map(PlayerMapper::toDTO).orElse(null);
     }
 

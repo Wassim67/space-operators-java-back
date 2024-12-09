@@ -6,7 +6,7 @@ import java.util.UUID;
 @Entity
 public class Session {
     @Id
-    private UUID id;  // UUID comme clé primaire pour la session
+    private String id;  // UUID comme clé primaire pour la session
 
     @ManyToOne
     @JoinColumn(name = "idPlayer", referencedColumnName = "idPlayer")
@@ -18,16 +18,16 @@ public class Session {
 
     // Constructeur sans argument
     public Session() {
-        this.id = UUID.randomUUID();  // Génération d'un UUID unique pour la session
+        this.id = String.valueOf(UUID.randomUUID());  // Génération d'un UUID unique pour la session
     }
 
     // Getters and Setters
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
     public void setId(UUID id) {
-        this.id = id;
+        this.id = String.valueOf(id);
     }
 
     public Player getPlayer() {
