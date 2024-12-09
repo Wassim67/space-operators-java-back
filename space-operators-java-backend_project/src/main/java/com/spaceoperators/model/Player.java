@@ -7,7 +7,7 @@ import java.util.UUID;
 @Entity
 public class Player {
     @Id
-    private UUID idPlayer;  // UUID directement comme type d'ID
+    private String idPlayer;
 
     private String name;
     private String pwd;
@@ -18,16 +18,16 @@ public class Player {
 
     // Constructeur sans argument
     public Player() {
-        this.idPlayer = UUID.randomUUID();  // Génération d'un UUID unique à chaque instantiation
+        this.idPlayer = String.valueOf(UUID.randomUUID());  // Génération d'un UUID unique à chaque instantiation
     }
 
     // Getters and Setters
-    public UUID getIdPlayer() {
+    public String getIdPlayer() {
         return idPlayer;
     }
 
     public void setIdPlayer(UUID idPlayer) {
-        this.idPlayer = idPlayer;
+        this.idPlayer = String.valueOf(idPlayer);
     }
 
     public String getName() {
