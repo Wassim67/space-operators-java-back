@@ -28,4 +28,13 @@ public class PlayerDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "PlayerDTO{" +
+                "idPlayer='" + idPlayer + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
